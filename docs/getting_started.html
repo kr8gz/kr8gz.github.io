@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello, world! - malb8dge documentation</title>
+        <title>Getting started - malb8dge documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="hello_world.html" class="active"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Making a guessing game</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> stuffs ig</div></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="getting_started.html" class="active"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="hello_world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Making a guessing game</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> stuffs ig</div></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,31 +142,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello, world!</a></h1>
-<p>Create a file called <em>hello.mlb8</em> with the following contents:</p>
-<pre><code>;&quot;Hello, world!&quot;
-</code></pre>
-<p>To run this program, simply type <code>malb8dge hello</code> in your favorite terminal.
-If <code>Hello, world!</code> was printed to your console, then congratulations! You have written your first malb8dge program!</p>
-<blockquote>
-<p><strong>Note:</strong> <code>malb8dge &lt;file&gt;</code> isn't the only way to run malb8dge - an interactive shell also exists, which can be started by typing <code>malb8dge</code> without any arguments!</p>
-</blockquote>
-<p>Now let's break down this program to understand what exactly is happening:</p>
-<ul>
-<li><code>;</code> is an operator that prints everything that comes after it to the console.</li>
-<li><code>&quot;Hello, world!&quot;</code> is a string, which you probably already know from other programming languages.
-(If you have no programming experience, I strongly recommend immediately finding another activity to waste your precious time on.)</li>
-</ul>
-<p>Great! It will almost certainly only go downhill from here on.</p>
+                        <h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<p>This chapter will teach you how to install and update malb8dge. You'll also learn how to write a &quot;Hello, world!&quot; program in malb8dge.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -174,30 +163,17 @@ If <code>Hello, world!</code> was printed to your console, then congratulations!
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="installation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
