@@ -199,7 +199,7 @@ Of course malb8dge has an operator for that: <code>a ?\ b</code>. It is in the b
 <p>Create a new file called <em>guessing_game.mlb8</em> and paste in the following code:</p>
 <pre><code>number = 1 ?\ 100
 </code></pre>
-<p>This will generate a random number within our specified range and assigns that number to the variable <code>number</code>.</p>
+<p>This will generate a random number within our specified range and assign it to the variable <code>number</code>.</p>
 <p>With our first piece of the puzzle in place, we can now move on to the next part: creating a loop and allowing the user to input their guesses.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="loops-and-input"><a class="header" href="#loops-and-input">Loops and input</a></h1>
 <h2 id="creating-a-loop"><a class="header" href="#creating-a-loop">Creating a loop</a></h2>
@@ -234,6 +234,7 @@ After that, we can assign that value to another variable like so: </p>
 <li>A message will be printed that states whether the guess was too high or too low.</li>
 <li>If the guess is equal to the secret number, a message appears telling the player that they won and the program will stop.</li>
 </ul>
+<h2 id="conditional-code-with-if-expressions"><a class="header" href="#conditional-code-with-if-expressions">Conditional code with if expressions</a></h2>
 <p>To figure out whether the guess was too high or too low, we'll create an if expression with 2 branches.
 An if expression allows you to run a block of code only if a specific condition is met.
 In this case we want one branch to run only when the guess was too high, and the other one only when it's too low.
@@ -255,14 +256,15 @@ In the code example above, this else block is actually another if expression wit
     ;&quot;Too low!&quot;
 }
 </code></pre>
+<h2 id="breaking-out-of-a-loop"><a class="header" href="#breaking-out-of-a-loop">Breaking out of a loop</a></h2>
 <p>To solve the last bullet point, we will create another else block after the two existing branches.
 Inside this block, the player will be told that they have guessed the correct number and the program will be stopped.
 For that, we will use a break statement which will <em>break</em> out of the infinite loop, and since there is nothing after the loop, the program will end.
 The malb8dge equivalent of a break statement is <code>%</code>. After adding all of that, you should get this:</p>
-<pre><code>guess &lt; number ? {
-    ;&quot;Too low!&quot;
-} ! guess &gt; number ? {
+<pre><code>guess &gt; number ? {
     ;&quot;Too high!&quot;
+} ! guess &lt; number ? {
+    ;&quot;Too low!&quot;
 } ! {
     ;&quot;You guessed the number!&quot;
     %
@@ -276,10 +278,10 @@ number = 1 ?\ 100
 ? {
     guess = _(&quot;Your guess: &quot;)
 
-    guess &lt; number ? {
-        ;&quot;Too low!&quot;
-    } ! guess &gt; number ? {
+    guess &gt; number ? {
         ;&quot;Too high!&quot;
+    } ! guess &lt; number ? {
+        ;&quot;Too low!&quot;
     } ! {
         ;&quot;You guessed the number!&quot;
         %
@@ -291,8 +293,28 @@ In the next chapter, we will take a look at how we can compact the code that we'
 <div style="break-before: page; page-break-before: always;"></div><h1 id="compacting-code"><a class="header" href="#compacting-code">Compacting code</a></h1>
 <p>The main inspiration for creating malb8dge was code golfing.
 Code golf is a competition where the goal is to write the shortest code that solves a specific problem.
-So we're going to do exactly that with our project from the last chapter!</p>
-<div style="break-before: page; page-break-before: always;"></div>
+So that's exactly what we're going to do with our project from the last chapter!</p>
+<div style="break-before: page; page-break-before: always;"></div><pre><code>;&quot;Guess the number!&quot;
+
+number = 1 ?\ 100
+
+? {
+    guess = _(&quot;Your guess: &quot;)
+
+    guess &gt; number ? {
+        ;&quot;Too high!&quot;
+    } ! guess &lt; number ? {
+        ;&quot;Too low!&quot;
+    } ! {
+        ;&quot;You guessed the number!&quot;
+        %
+    }
+}
+</code></pre>
+<pre><code>/&quot;Guess&quot;,t=&quot;the number!&quot;n=1?\100;?/&quot;Too&quot;,*_(&quot;Your guess: &quot;)&lt;n?&quot;low!&quot;!&amp;&gt;n?&quot;high!&quot;!%%&quot;You guessed {t
+</code></pre>
+<p>yay</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -310,22 +332,6 @@ So we're going to do exactly that with our project from the last chapter!</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

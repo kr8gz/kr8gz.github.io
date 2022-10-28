@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>RNG using operators - malb8dge documentation</title>
+        <title>Getting started - malb8dge documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html" class="active"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-todo.html"><strong aria-hidden="true">3.1.</strong> TODO</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html" class="active"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-todo.html"><strong aria-hidden="true">3.1.</strong> TODO</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,41 +142,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="rng-using-operators"><a class="header" href="#rng-using-operators">RNG using operators</a></h1>
-<h2 id="introducing-malbd8ges-operators"><a class="header" href="#introducing-malbd8ges-operators">Introducing malbd8ge's operators</a></h2>
-<p>Operators are usually funny mathematical symbols that have strange behaviors.
-malb8dge takes that to the maximum by making almost every simple function have its own 1 or 2 symbol combination, each with their own strange behavior for every single type of value.
-This means that malb8dge has many, <em>many</em> operators.
-If you were programming in another language and wanted to get the absolute value of a number, like for example <code>-3</code>, you would usually expect there to be a function that looks like <code>abs(-3)</code> or <code>(-3).abs()</code>.
-But guess what - malb8dge has an operator for that instead, so <code>abs(-3)</code> would turn into <code>#-3</code>. (By the way, <code>-</code> is another operator, so we've actually already used two operators in this example!)</p>
-<p>Operators come in three different types:</p>
-<ul>
-<li>Before (<code>-x</code>)</li>
-<li>After (<code>x$</code>)</li>
-<li>Binary (<code>x + y</code>)</li>
-</ul>
-<p>The position is very important as it changes the entire meaning of the operator!
-Take <code>'x</code> and <code>x'</code> for example - one converts a number to a character and vice versa, while the other rounds a number.</p>
-<p>A list of all the operators in malb8dge can be found <a href="TODO">here</a>.</p>
-<h2 id="generating-a-random-number"><a class="header" href="#generating-a-random-number">Generating a random number</a></h2>
-<p>For our game, we will generate a number between 1 and 100, including both ends.
-Of course malb8dge has an operator for that: <code>a ?\ b</code>. It is in the binary position since we need 2 values, one for each end.
-(It looks very ugly, but that's not the point of malb8dge. It will only get uglier.)</p>
-<p>Create a new file called <em>guessing_game.mlb8</em> and paste in the following code:</p>
-<pre><code>number = 1 ?\ 100
-</code></pre>
-<p>This will generate a random number within our specified range and assigns that number to the variable <code>number</code>.</p>
-<p>With our first piece of the puzzle in place, we can now move on to the next part: creating a loop and allowing the user to input their guesses.</p>
+                        <h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<p>This chapter will teach you how to install and update malb8dge. You'll also learn how to write a &quot;Hello, world!&quot; program in malb8dge.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="02-00-making-a-guessing-game.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="00-00-introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="02-02-loops-and-input.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="01-01-installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -186,33 +163,17 @@ Of course malb8dge has an operator for that: <code>a ?\ b</code>. It is in the b
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="02-00-making-a-guessing-game.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="00-00-introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="02-02-loops-and-input.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="01-01-installation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

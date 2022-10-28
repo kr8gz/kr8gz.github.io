@@ -142,7 +142,27 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <pre><code>;&quot;Guess the number!&quot;
+
+number = 1 ?\ 100
+
+? {
+    guess = _(&quot;Your guess: &quot;)
+
+    guess &gt; number ? {
+        ;&quot;Too high!&quot;
+    } ! guess &lt; number ? {
+        ;&quot;Too low!&quot;
+    } ! {
+        ;&quot;You guessed the number!&quot;
+        %
+    }
+}
+</code></pre>
+<pre><code>/&quot;Guess&quot;,t=&quot;the number!&quot;n=1?\100;?/&quot;Too&quot;,*_(&quot;Your guess: &quot;)&lt;n?&quot;low!&quot;!&amp;&gt;n?&quot;high!&quot;!%%&quot;You guessed {t
+</code></pre>
+<p>yay</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -166,22 +186,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

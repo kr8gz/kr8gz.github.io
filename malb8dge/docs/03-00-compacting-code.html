@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - malb8dge documentation</title>
+        <title>Compacting code - malb8dge documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-todo.html"><strong aria-hidden="true">3.1.</strong> TODO</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html" class="active"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-todo.html"><strong aria-hidden="true">3.1.</strong> TODO</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,16 +142,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p>malb8dge is a very high-level and dynamically-typed esolang that aims to shorten code by removing words and reducing repetitions wherever possible, while still keeping it somewhat easy to write and understand.
-If that doesn't sound like your cup of tea, you still have about 2 chapters left to decide whether you want to stay or not.</p>
+                        <h1 id="compacting-code"><a class="header" href="#compacting-code">Compacting code</a></h1>
+<p>The main inspiration for creating malb8dge was code golfing.
+Code golf is a competition where the goal is to write the shortest code that solves a specific problem.
+So that's exactly what we're going to do with our project from the last chapter!</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="02-03-basic-control-flow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next" href="01-00-getting-started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="03-01-todo.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -161,30 +165,17 @@ If that doesn't sound like your cup of tea, you still have about 2 chapters left
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="02-03-basic-control-flow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next" href="01-00-getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="03-01-todo.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
