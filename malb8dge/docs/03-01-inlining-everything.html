@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Making a guessing game - malb8dge documentation</title>
+        <title>Inlining everything - malb8dge documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html" class="active"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-inlining-everything.html"><strong aria-hidden="true">3.1.</strong> Inlining everything</a></li><li class="chapter-item expanded "><a href="03-02-looking-for-repetitions.html"><strong aria-hidden="true">3.2.</strong> Looking for repetitions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-inlining-everything.html" class="active"><strong aria-hidden="true">3.1.</strong> Inlining everything</a></li><li class="chapter-item expanded "><a href="03-02-looking-for-repetitions.html"><strong aria-hidden="true">3.2.</strong> Looking for repetitions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,26 +142,74 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="making-a-guessing-game"><a class="header" href="#making-a-guessing-game">Making a guessing game</a></h1>
-<p>Now let's create something more advanced! A classic beginner project is a simple guessing game.
-Here is a list of instructions we want it to execute:</p>
-<ul>
-<li>A secret random number between 1 and 100 is generated.</li>
-<li>The program will repeatedly ask for the player's guess.</li>
-<li>A message will be printed that states whether the guess was too high or too low.</li>
-<li>If the guess is equal to the secret number, a message appears telling the player that they won and the program will stop.</li>
-</ul>
-<p>Let's start with the first task - the next chapter will introduce malb8dge's operators and teach you how to generate a random number using one of them.</p>
+                        <h1 id="inlining-everything"><a class="header" href="#inlining-everything">Inlining <em>everything</em></a></h1>
+<p>Let's take another look at our finished program:</p>
+<pre><code>;&quot;Guess the number!&quot;
+
+number = 1 ?\ 100
+
+? {
+    guess = _(&quot;Your guess: &quot;)
+
+    guess &gt; number ? {
+        ;&quot;Too high!&quot;
+    } ! guess &lt; number ? {
+        ;&quot;Too low!&quot;
+    } ! {
+        ;&quot;You guessed the number!&quot;
+        %
+    }
+}
+</code></pre>
+<p>We could easily remove almost half of the characters by deleting unnecessary spaces and newlines, but that would make the code pretty unreadable very fast - so we'll do that later.
+What we can do instead is trying to compact the parts inside of the curly brackets (<code>{ ... }</code>) to single statements, so that we can remove the brackets entirely.</p>
+<p>First, let's look at this part:</p>
+<pre><code>} ! {
+    ;&quot;You guessed the number!&quot;
+    %
+}
+</code></pre>
+<p>malb8dge has a shortcut for exiting a program and also optionally printing a message: <code>%%message</code>.
+This means that we can replace the last block with a simple exit statement like so:</p>
+<pre><code>} ! {
+    %%&quot;You guessed the number!&quot;
+}
+</code></pre>
+<p>At the moment this doesn't look much shorter, but it will be once we remove the curly brackets!</p>
+<p>The next thing we could do is compact everything that is inside of the loop into one statement.
+We can achieve this by inlining the <code>guess</code> variable, i.e. giving <code>guess</code> its value inside the if expression itself, since variable assignments in malb8dge also return the value that is being assigned.
+The code would look something like this:</p>
+<pre><code>(guess = _(&quot;Your guess: &quot;)) &gt; number ? {
+    ;&quot;Too high!&quot;
+} ! guess &lt; number ? {
+    ;&quot;Too low!&quot;
+} ! {
+    %%&quot;You guessed the number!&quot;
+}
+</code></pre>
+<p>The brackets around the inline assignment are important, because otherwise <code>guess</code> would get the value of the entire if expression.</p>
+<p>But of course, this can be shortened too. Using the anonymous global variable, we can even eliminate an entire variable name!</p>
+<pre><code>*_(&quot;Your guess: &quot;) &gt; number ? {
+    ;&quot;Too high!&quot;
+} ! &amp; &lt; number ? {
+    ;&quot;Too low!&quot;
+} ! {
+    %%&quot;You guessed the number!&quot;
+}
+</code></pre>
+<p>As you can see, the assignment has been replaced by a <code>*</code>, and the variable has turned into a <code>&amp;</code>.</p>
+<p>We cannot do the same thing to the <code>number</code> variable though, since we want the secret number to stay the same during the entire loop, so this is the best we can do!</p>
+<p>Before we finally turn this program into an unreadable mess, we'll also look at how we can remove a few other repetitions, specifically the strings!</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="01-02-hello-world.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="03-00-compacting-code.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="02-01-rng-using-operators.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="03-02-looking-for-repetitions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -171,33 +219,17 @@ Here is a list of instructions we want it to execute:</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="01-02-hello-world.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="03-00-compacting-code.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="02-01-rng-using-operators.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="03-02-looking-for-repetitions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

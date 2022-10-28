@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-todo.html"><strong aria-hidden="true">3.1.</strong> TODO</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="02-00-making-a-guessing-game.html"><strong aria-hidden="true">2.</strong> Making a guessing game</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-01-rng-using-operators.html"><strong aria-hidden="true">2.1.</strong> RNG using operators</a></li><li class="chapter-item expanded "><a href="02-02-loops-and-input.html"><strong aria-hidden="true">2.2.</strong> Loops and input</a></li><li class="chapter-item expanded "><a href="02-03-basic-control-flow.html"><strong aria-hidden="true">2.3.</strong> Basic control flow</a></li></ol></li><li class="chapter-item expanded "><a href="03-00-compacting-code.html"><strong aria-hidden="true">3.</strong> Compacting code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-01-inlining-everything.html"><strong aria-hidden="true">3.1.</strong> Inlining everything</a></li><li class="chapter-item expanded "><a href="03-02-looking-for-repetitions.html"><strong aria-hidden="true">3.2.</strong> Looking for repetitions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">other stuffs</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -203,7 +203,7 @@ Of course malb8dge has an operator for that: <code>a ?\ b</code>. It is in the b
 <p>With our first piece of the puzzle in place, we can now move on to the next part: creating a loop and allowing the user to input their guesses.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="loops-and-input"><a class="header" href="#loops-and-input">Loops and input</a></h1>
 <h2 id="creating-a-loop"><a class="header" href="#creating-a-loop">Creating a loop</a></h2>
-<p>There are several different kinds of loops in malb8dge, but for our guessing game we'll only use the simplest one: an infinite loop.
+<p>There are several different kinds of loops in malb8dge, but for our guessing game we'll only need the simplest one: an infinite loop.
 You might know this as a <code>while true</code> loop from other programming languages, but malb8dge has a shortcut for that:</p>
 <pre><code>? {
 
@@ -256,6 +256,15 @@ In the code example above, this else block is actually another if expression wit
     ;&quot;Too low!&quot;
 }
 </code></pre>
+<blockquote>
+<p><strong>Note:</strong> If you haven't already noticed, we are comparing a string (the input) to a number, which seems very odd.
+How will the comparison work if the input isn't a number?
+Instead of converting the string to a number, the number will be converted to a string, which isn't very useful.
+But if the player inputs an invalid guess, it will never be correct anyway.
+Instead, they might be a bit confused why <code>hello</code> is too high of a guess.
+But again, this is not the point of malb8dge.
+If you <em>do</em> care about these kinds of things, you're probably better off learning a language like Rust instead.</p>
+</blockquote>
 <h2 id="breaking-out-of-a-loop"><a class="header" href="#breaking-out-of-a-loop">Breaking out of a loop</a></h2>
 <p>To solve the last bullet point, we will create another else block after the two existing branches.
 Inside this block, the player will be told that they have guessed the correct number and the program will be stopped.
@@ -291,10 +300,12 @@ number = 1 ?\ 100
 <p>Awesome! You have now learnt about some basic malb8dge syntax.
 In the next chapter, we will take a look at how we can compact the code that we've written in this chapter.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="compacting-code"><a class="header" href="#compacting-code">Compacting code</a></h1>
-<p>The main inspiration for creating malb8dge was code golfing.
+<p>The main inspiration for creating malb8dge was code golf.
 Code golf is a competition where the goal is to write the shortest code that solves a specific problem.
 So that's exactly what we're going to do with our project from the last chapter!</p>
-<div style="break-before: page; page-break-before: always;"></div><pre><code>;&quot;Guess the number!&quot;
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inlining-everything"><a class="header" href="#inlining-everything">Inlining <em>everything</em></a></h1>
+<p>Let's take another look at our finished program:</p>
+<pre><code>;&quot;Guess the number!&quot;
 
 number = 1 ?\ 100
 
@@ -311,6 +322,62 @@ number = 1 ?\ 100
     }
 }
 </code></pre>
+<p>We could easily remove almost half of the characters by deleting unnecessary spaces and newlines, but that would make the code pretty unreadable very fast - so we'll do that later.
+What we can do instead is trying to compact the parts inside of the curly brackets (<code>{ ... }</code>) to single statements, so that we can remove the brackets entirely.</p>
+<p>First, let's look at this part:</p>
+<pre><code>} ! {
+    ;&quot;You guessed the number!&quot;
+    %
+}
+</code></pre>
+<p>malb8dge has a shortcut for exiting a program and also optionally printing a message: <code>%%message</code>.
+This means that we can replace the last block with a simple exit statement like so:</p>
+<pre><code>} ! {
+    %%&quot;You guessed the number!&quot;
+}
+</code></pre>
+<p>At the moment this doesn't look much shorter, but it will be once we remove the curly brackets!</p>
+<p>The next thing we could do is compact everything that is inside of the loop into one statement.
+We can achieve this by inlining the <code>guess</code> variable, i.e. giving <code>guess</code> its value inside the if expression itself, since variable assignments in malb8dge also return the value that is being assigned.
+The code would look something like this:</p>
+<pre><code>(guess = _(&quot;Your guess: &quot;)) &gt; number ? {
+    ;&quot;Too high!&quot;
+} ! guess &lt; number ? {
+    ;&quot;Too low!&quot;
+} ! {
+    %%&quot;You guessed the number!&quot;
+}
+</code></pre>
+<p>The brackets around the inline assignment are important, because otherwise <code>guess</code> would get the value of the entire if expression.</p>
+<p>But of course, this can be shortened too. Using the anonymous global variable, we can even eliminate an entire variable name!</p>
+<pre><code>*_(&quot;Your guess: &quot;) &gt; number ? {
+    ;&quot;Too high!&quot;
+} ! &amp; &lt; number ? {
+    ;&quot;Too low!&quot;
+} ! {
+    %%&quot;You guessed the number!&quot;
+}
+</code></pre>
+<p>As you can see, the assignment has been replaced by a <code>*</code>, and the variable has turned into a <code>&amp;</code>.</p>
+<p>We cannot do the same thing to the <code>number</code> variable though, since we want the secret number to stay the same during the entire loop, so this is the best we can do!</p>
+<p>Before we finally turn this program into an unreadable mess, we'll also look at how we can remove a few other repetitions, specifically the strings!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="looking-for-repetitions"><a class="header" href="#looking-for-repetitions">Looking for repetitions</a></h1>
+<p>Here's our progress so far:</p>
+<pre><code>;&quot;Guess the number!&quot;
+
+number = 1 ?\ 100
+
+? {
+    *_(&quot;Your guess: &quot;) &gt; number ? {
+        ;&quot;Too high!&quot;
+    } ! &amp; &lt; number ? {
+        ;&quot;Too low!&quot;
+    } ! {
+        %%&quot;You guessed the number!&quot;
+    }
+}
+</code></pre>
+<p>As you might have noticed, most of our program now consists of only text!</p>
 <pre><code>/&quot;Guess&quot;,t=&quot;the number!&quot;n=1?\100;?/&quot;Too&quot;,*_(&quot;Your guess: &quot;)&lt;n?&quot;low!&quot;!&amp;&gt;n?&quot;high!&quot;!%%&quot;You guessed {t
 </code></pre>
 <p>yay</p>
