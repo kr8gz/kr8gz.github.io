@@ -7,7 +7,7 @@ div#links > a.link {
     font-size: 49px;
     font-family: 'Comic Sans MS', sans-serif;
     cursor: pointer;
-    transition: opacity 500ms ease;
+    transition: opacity 512ms ease;
     color:#EFFEFE;
     display: block;
     margin-top: 2vw;
@@ -34,7 +34,7 @@ div#links {
     flex-direction: column;
     justify-content: center;
     padding-left: 10vw;
-    transition: transform 500ms ease-in-out;
+    transition: transform 512ms ease-in-out;
 }
 
 div#links[data-moveleft="yes"] {
@@ -62,8 +62,9 @@ article {
     position: absolute;
     opacity: 0;
     font-family: 'Impact', sans-serif;
+    font-weight: bolder;
     color: #EEEFFF;
-    transition: transform 500ms ease, opacity 1s ease;
+    transition: transform 512ms ease, opacity 1s ease;
     width: 70vw;
 }
 
