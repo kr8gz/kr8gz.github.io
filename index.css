@@ -62,7 +62,7 @@ article {
     position: absolute;
     opacity: 0;
     font-family: 'Impact', sans-serif;
-    font-weight: bolder;
+    font-weight: bold;
     color: #EEEFFF;
     transition: transform 512ms ease, opacity 1s ease;
     width: 70vw;
