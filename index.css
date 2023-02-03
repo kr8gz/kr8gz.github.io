@@ -113,12 +113,11 @@ a:active:after {
 
 #links ul {
     margin: 0;
-    width: 100%;
 }
 
 #links li {
     transition: 0.5s;
-    width: fit-content;
+    width: fit-content(100%);
 }
 
 #links li:hover {
