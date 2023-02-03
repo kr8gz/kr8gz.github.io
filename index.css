@@ -11,6 +11,7 @@ body {
 #greetings {
     color: black;
     transition: 0.5s;
+    overflow: visible;
     white-space: nowrap;
 }
 
