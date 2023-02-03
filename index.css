@@ -47,7 +47,7 @@ a:hover {
 
 a:hover:after {
     transform: scaleX(1);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
 
     background-color: var(--hover-link);
     border: 1px solid var(--hover-link);
@@ -117,11 +117,12 @@ a:active:after {
 
 #links li {
     transition: 0.5s;
+    width: fit-content;
 }
 
 #links li:hover {
     transform: translateX(var(--step-size));
-    transition: 0.25s;
+    transition: transform 0.25s;
 }
 
 .hidden {
