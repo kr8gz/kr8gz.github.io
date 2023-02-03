@@ -97,12 +97,12 @@ a:active:after {
 }
 
 .fade-start {
-    opacity: 0%;
+    opacity: 0;
     transition: 1s;
 }
 
 .fade-end {
-    opacity: 50%;
+    opacity: 0.5;
     transition: 10s;
 }
 
@@ -134,7 +134,7 @@ a:active:after {
 }
 
 #links img {
-    opacity: 75%;
+    opacity: 0.75;
     pointer-events: none;
     position: absolute;
 }
