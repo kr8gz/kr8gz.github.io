@@ -18,7 +18,7 @@ body {
 
 a:after {
     position: absolute;
-    content: '';
+    content: "";
     transform: scaleX(0);
     transform-origin: bottom right;
 
@@ -56,13 +56,13 @@ a:hover:after {
 
 a:active {
     color: var(--active-link);
-    transition: 0s;
+    transition: 0.15s;
 }
 
 a:active:after {
     background-color: var(--active-link);
     border: 1px solid var(--active-link);
-    transition: 0s;
+    transition: 0.15s;
 }
 
 #header {
@@ -90,6 +90,22 @@ a:active:after {
     transition: 0.2s;
 }
 
+#click-hint {
+    position: relative;
+    top: 1vmin;
+    left: 2vmin;
+}
+
+.fade-start {
+    opacity: 0%;
+    transition: 1s;
+}
+
+.fade-end {
+    opacity: 50%;
+    transition: 10s;
+}
+
 #links {
     margin-left: var(--step-size);
     overflow: hidden;
@@ -109,7 +125,16 @@ a:active:after {
     transition: 0.25s;
 }
 
+.hidden {
+
+}
+
+.visible {
+    
+}
+
 #links img {
+    opacity: 75%;
     pointer-events: none;
     position: absolute;
 }
