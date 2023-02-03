@@ -8,20 +8,20 @@ body {
     font-size: 3.5vmin;
 }
 
-#greetings * {
-    display: inline-block;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
 #greetings {
     color: black;
     transition: 0.5s;
+    white-space: nowrap;
 }
 
 #greetings:hover {
     color: red;
     transition: 0.2s;
+}
+
+#greetings * {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #links a img {
