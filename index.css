@@ -25,7 +25,10 @@ body {
     vertical-align: middle;
 }
 
-#links a img {
+#links {
     margin-left: 6vmin;
+}
+
+#links a img {
     position: absolute;
 }
