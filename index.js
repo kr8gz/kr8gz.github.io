@@ -19,8 +19,8 @@ const random = max => Math.floor(Math.random() * max);
 
 var x, y
 document.addEventListener("mousemove", event => {
-    x = event.clientX
-    y = event.clientY
+    x = event.x
+    y = event.y
 })
 
 // links
@@ -57,9 +57,6 @@ for (var link of links.getElementsByTagName("a")) {
 // greetings
 const greeting = document.getElementById("greeting")
 
-function generate_greeting(event) {
+greeting.addEventListener("mousedown", event => {
     event.target.innerHTML = "- " + greetings_list[random(greetings_list.length)]
-}
-
-greeting.addEventListener("mouseover", generate_greeting)
-greeting.addEventListener("mousedown", generate_greeting)
+})
