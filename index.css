@@ -5,18 +5,21 @@ html {
 body {
     background-image: linear-gradient(-20deg, orange, yellow);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 3.3vmin;
+    font-size: 3.25vmin;
 }
 
-#greetings {
+#greetings * {
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;
+}
+
+#greeting {
     color: black;
     transition: 0.5s;
 }
 
-#greetings:hover {
+#greeting:hover {
     color: red;
     transition: 0.2s;
 }
