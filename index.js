@@ -55,8 +55,9 @@ for (var link of links.getElementsByTagName("a")) {
 }
 
 // greetings
-const greeting = document.getElementById("greeting")
+const greetings = document.getElementById("greetings")
 
-greeting.addEventListener("mousedown", event => {
-    event.target.innerHTML = "- " + greetings_list[random(greetings_list.length)]
+greetings.addEventListener("mousedown", event => {
+    var greeting = document.getElementById("greeting")
+    greeting.innerHTML = "- " + greetings_list[random(greetings_list.length)]
 })
