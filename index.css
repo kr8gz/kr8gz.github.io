@@ -113,12 +113,12 @@ a:active:after {
 
 #links ul {
     margin: 0;
+    width: 100%;
 }
 
 #links li {
     transition: 0.5s;
     width: fit-content;
-    white-space: pre-wrap;
 }
 
 #links li:hover {
