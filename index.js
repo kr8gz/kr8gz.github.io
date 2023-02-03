@@ -1,21 +1,7 @@
 const random = max => Math.floor(Math.random() * max);
 
-var x, y
-document.addEventListener("mousemove", event => {
-    x = event.x
-    y = event.y
-})
-
 // links
 const links = document.getElementById("links")
-
-function generate_explosion() {
-    var img = document.createElement("img")
-    img.src = "/media/explosion.gif?reload=" + Math.random()
-    img.style.left = x - 120 + "px"
-    img.style.top = y - 170 + "px"
-    return img
-}
 
 for (var link of links.getElementsByTagName("a")) {
     link.addEventListener("mouseover", event => {
@@ -24,17 +10,15 @@ for (var link of links.getElementsByTagName("a")) {
         a.style.left = "0"
         a.style.top = "0"
 
-        var img = generate_explosion()
+        var img = document.createElement("img")
+        img.src = "/media/explosion.gif?reload=" + Math.random()
+        img.style.left = event.x - 120 + "px"
+        img.style.top = event.y - 170 + "px"
+
         a.appendChild(img)
         links.appendChild(a)
         setTimeout(() => links.removeChild(a), 1250)
     })
-
-    link.onclick = function() {
-        var img = generate_explosion()
-        // links.appendChild(img)
-        setTimeout(() => links.removeChild(img), 1250)
-    }
 }
 
 // greetings
