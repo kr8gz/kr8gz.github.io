@@ -60,9 +60,12 @@ a:active {
 }
 
 a:active:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
     background-color: var(--active-link);
     border: 1px solid var(--active-link);
-    transition: 0.15s;
+    transition: color 0.15s, transform 0.5s;
 }
 
 #header {
