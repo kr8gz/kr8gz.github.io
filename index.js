@@ -1,20 +1,3 @@
-const greetings_list = [
-    "hello :)",
-    "hi :D",
-    "griaß di",
-    "good day!",
-    "servus",
-    "goedendag",
-    "hey :p",
-    "what's up?",
-    "moin",
-    "hallöchen",
-    "hola",
-    "你好！",
-    "salut!",
-    "buongiorno (puon tschorno)",
-]
-
 const random = max => Math.floor(Math.random() * max);
 
 var x, y
@@ -49,15 +32,38 @@ for (var link of links.getElementsByTagName("a")) {
 
     link.onclick = function() {
         var img = generate_explosion()
-        links.appendChild(img)
+        // links.appendChild(img)
         setTimeout(() => links.removeChild(img), 1250)
     }
 }
 
 // greetings
+const greetings_list = [
+    "hello :)",
+    "hi :D",
+    "griaß di",
+    "good day!",
+    "servus",
+    "goedendag",
+    "hey :p",
+    "what's up?",
+    "moin",
+    "hallöchen",
+    "hola",
+    "你好！",
+    "salut!",
+    "buongiorno (puon tschorno)",
+]
+var last_choice = greetings_list[0]
+
 const greetings = document.getElementById("greetings")
 
 greetings.addEventListener("mousedown", event => {
     var greeting = document.getElementById("greeting")
-    greeting.innerHTML = "- " + greetings_list[random(greetings_list.length)]
+    var choice
+    do {
+        choice = greetings_list[random(greetings_list.length)]
+    } while (choice == last_choice)
+    greeting.innerHTML = "- " + choice
+    last_choice = choice
 })
