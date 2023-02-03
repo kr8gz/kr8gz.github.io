@@ -22,11 +22,11 @@ a:after {
     transform: scaleX(0);
     transform-origin: bottom right;
 
-    border: 1px solid;
-    border-radius: 2px;
+    /* border: 1px solid; */
+    border-radius: 1vmin;
     background-color: var(--link);
 
-    height: 2px;
+    height: 1vmin;
     width: 100%;
     bottom: 0;
     left: 0;
