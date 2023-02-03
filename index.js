@@ -45,3 +45,11 @@ header.addEventListener("mousedown", event => {
     } while (choice == last_choice)
     last_choice = greeting.innerHTML = choice
 })
+
+/*
+
+TODO
+- click hint at header
+- something in a corner to toggle explosions
+
+*/

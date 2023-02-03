@@ -1,5 +1,9 @@
 :root {
     --step-size: 3.5vmin;
+
+    --link: black;
+    --hover-link: blue;
+    --active-link: orangered;
 }
 
 html {
@@ -12,24 +16,53 @@ body {
     font-size: var(--step-size);
 }
 
+a:after {
+    position: absolute;
+    content: '';
+    transform: scaleX(0);
+    transform-origin: bottom right;
+
+    border: 1px solid;
+    border-radius: 2px;
+    background-color: var(--link);
+
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    transition: background-color 0.5s, transform 0.5s;
+}
+
 a:link, a:visited {
-    color: black;
+    color: var(--link);
     text-decoration: none;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 a:hover {
-    color: blue;
-    transition: 0.3s;
+    color: var(--hover-link);
+    transition: 0s;
 }
 
 a:hover:after {
-    /* help */
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+    background-color: var(--hover-link);
+    border: 1px solid var(--hover-link);
+    transition: color 0s, transform 0.5s;
 }
 
 a:active {
-    color: orangered;
-    transition: 0.15s;
+    color: var(--active-link);
+    transition: 0s;
+}
+
+a:active:after {
+    background-color: var(--active-link);
+    border: 1px solid var(--active-link);
+    transition: 0s;
 }
 
 #header {
@@ -67,12 +100,13 @@ a:active {
 }
 
 #links li {
-    transition: 0.3s;
+    transition: 0.5s;
+    width: fit-content;
 }
 
 #links li:hover {
     transform: translateX(var(--step-size));
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 #links img {
