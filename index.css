@@ -117,7 +117,6 @@ a:active:after {
 
 #links li {
     transition: 0.5s;
-    width: fit-content;
 }
 
 #links li:hover {
