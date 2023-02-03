@@ -14,12 +14,12 @@ body {
     white-space: nowrap;
 }
 
-#greeting {
+#greetings {
     color: black;
     transition: 0.5s;
 }
 
-#greeting:hover {
+#greetings:hover {
     color: red;
     transition: 0.2s;
 }
