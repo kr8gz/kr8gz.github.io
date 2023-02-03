@@ -8,18 +8,15 @@ body {
     font-size: 3.2vmin;
 }
 
-#greetings * {
+#greetings {
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;
-}
-
-#greeting {
     color: black;
     transition: 0.5s;
 }
 
-#greeting:hover {
+#greetings:hover {
     color: red;
     transition: 0.2s;
 }
