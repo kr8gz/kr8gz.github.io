@@ -10,6 +10,7 @@ body {
 
 #greetings {
     color: black;
+    font-size: 100%;
     transition: 0.5s;
     overflow: hidden;
     white-space: nowrap;
@@ -17,6 +18,7 @@ body {
 
 #greetings:hover {
     color: red;
+    font-size: 120%;
     transition: 0.2s;
 }
 
