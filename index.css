@@ -10,6 +10,7 @@ body {
 
 #greetings * {
     display: inline-block;
+    overflow: visible;
     vertical-align: middle;
 }
 
