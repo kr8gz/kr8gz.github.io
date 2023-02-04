@@ -27,7 +27,7 @@ body {
 
     background-image: linear-gradient(-20deg, orangered, yellow 60%);
     animation: bg-rotation 22s infinite;
-  }
+}
 
 @keyframes bg-rotation {
     to { transform: rotate(360deg) }
