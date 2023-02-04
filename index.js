@@ -63,7 +63,4 @@ for (var link of links.getElementsByTagName("a")) {
 /*
 TODO
 - something in a corner to toggle explosions
-- (mobile only?) fix underline animation starting point
-- (mobile only?) fix stupid fucking ass bitch shit line breaking
-- after click hint slide in links from left (before that theyre hidden outside the screen on the left)
 */
