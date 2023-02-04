@@ -47,7 +47,7 @@ a:hover {
 
 a:hover:after {
     transform: scaleX(1);
-    transform-origin: bottom right;
+    transform-origin: bottom left;
 
     background-color: var(--hover-link);
     border: 1px solid var(--hover-link);
