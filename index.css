@@ -18,6 +18,7 @@ body:after {
     content: "";
     display: block;
     z-index: -1;
+    overflow: hidden;
     
     position: absolute;
     top: calc(-100vw - 100vh);
