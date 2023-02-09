@@ -1,114 +1,107 @@
-:root {
-    --link: black;
-    --hover-link: blue;
-    --active-link: orangered;
-}
-
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
 }
 
 #background {
-    content: "";
-    display: block;
-    position: fixed;
-    overflow: hidden;
-    z-index: -1;
-
-    top: calc(-100vw);
-    bottom: calc(-100vw);
-    left: calc(-100vh);
-    right: calc(-100vh);
-
-    background-image: linear-gradient(-20deg, orangered, yellow 60%);
-    animation: bg-rotation 22s infinite;
+  content: "";
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  z-index: -1;
+  top: -100vw;
+  bottom: -100vw;
+  left: -100vh;
+  right: -100vh;
+  background-image: linear-gradient(-20deg, orangered, yellow 60%);
+  animation: bg-rotation 22s infinite;
 }
 
 @keyframes bg-rotation {
-    to { transform: rotate(360deg) }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-
 a:link, a:visited {
-    color: var(--link);
-    transition: 1.8s;
+  color: black;
+  transition: color 1.8s;
 }
-
 a:hover {
-    color: var(--hover-link);
-    transition: 0s;
+  color: blue;
+  transition: color 0s;
 }
-
 a:active {
-    color: var(--active-link);
-    transition: 0.15s;
+  color: orangered;
+  transition: color 0.15s;
 }
 
 #header {
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    white-space: nowrap;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  white-space: nowrap;
 }
-
-#header *::selection {
-    background: none;
-}
-
 #header * {
-    margin: 0;
+  margin: 0;
+}
+#header *::-moz-selection {
+  background: none;
+}
+#header *::selection {
+  background: none;
 }
 
 #greeting {
-    color: black;
-    transition: 0.5s;
+  color: black;
+  transition: color 0.5s;
 }
 
 #header:hover #greeting {
-    color: red;
-    transition: 0.2s;
+  color: red;
+  transition: color 0.2s;
 }
 
 #click-hint {
-    position: relative;
-    top: 1vmin;
-    left: 2vmin;
+  position: relative;
+  top: 1vmin;
+  left: 2vmin;
+  opacity: 0;
+  transition: opacity 1s;
 }
-
-.fade-start {
-    opacity: 0;
-    transition: 1s;
-}
-
-.fade-end {
-    opacity: 0.5;
-    transition: 10s;
+#click-hint.show {
+  opacity: 0.5;
+  transition: opacity 10s;
 }
 
 #links {
-    margin: 0 1rem;
+  margin: 0 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-
 #links li {
-    width: fit-content;
-    transition: transform 0.5s;
+  pointer-events: none;
+  transform: translateX(calc(-100% - 72px));
 }
-
-#links li:hover {
-    transform: translateX(1rem);
-    transition: transform 0.25s;
+#links li a {
+  pointer-events: auto;
 }
-
+#links li.show {
+  transform: translateX(0);
+  transition: transform 0.75s;
+}
+#links li.show:hover {
+  transform: translateX(1rem);
+  transition: transform 0.25s;
+}
 #links img {
-    opacity: 0.75;
-    pointer-events: none;
-    position: absolute;
-}
+  opacity: 0.75;
+  pointer-events: none;
+  position: absolute;
+}/*# sourceMappingURL=index.css.map */

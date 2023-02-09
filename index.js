@@ -1,6 +1,5 @@
 const random = max => Math.floor(Math.random() * max);
 
-// greeting
 const greeting_list = [
     "hello :)",
     "hi :D",
@@ -22,19 +21,22 @@ var last_choice = greeting_list[0]
 const header = document.getElementById("header")
 const greeting = document.getElementById("greeting")
 const clickHint = document.getElementById("click-hint")
+const links = document.getElementById("links")
 
-document.addEventListener("mousedown", event => {
+const clickHintTimer = setTimeout(() => clickHint.classList.add("show"), 3000);
+
+function firstClick(event) {
     clearTimeout(clickHintTimer)
-    clickHint.classList.add("fade-start")
-    clickHint.classList.remove("fade-end")
+    document.removeEventListener("mousedown", firstClick)
 
-    // TODO add slide in effect for the links with the hidden and visible classes
-})
+    clickHint.classList.remove("show")
+    for (let index = 0; index < links.children.length; index++) {
+        const child = links.children[index];
+        setTimeout(() => child.classList.add("show"), index * 100)
+    }
+}
 
-const clickHintTimer = setTimeout(() => {
-    clickHint.classList.remove("fade-start")
-    clickHint.classList.add("fade-end")
-}, 3000);
+document.addEventListener("mousedown", firstClick)
 
 header.addEventListener("mousedown", event => {
     var choice
@@ -43,9 +45,6 @@ header.addEventListener("mousedown", event => {
     } while (choice == last_choice)
     last_choice = greeting.innerHTML = choice
 })
-
-// links
-const links = document.getElementById("links")
 
 for (var link of links.getElementsByTagName("a")) {
     link.addEventListener("mouseover", event => {
