@@ -57,12 +57,10 @@ a:active {
 #header *::selection {
   background: none;
 }
-
-#greeting {
+#header #greeting {
   color: black;
   transition: color 0.5s;
 }
-
 #header:hover #greeting {
   color: red;
   transition: color 0.2s;

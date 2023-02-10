@@ -57,16 +57,16 @@ a {
             background: none;
         }
     }
-}
 
-#greeting {
-    color: black;
-    transition: color 0.5s;
-}
-
-#header:hover #greeting {
-    color: red;
-    transition: color 0.2s;
+    #greeting {
+        color: black;
+        transition: color 0.5s;
+    }
+    
+    &:hover #greeting {
+        color: red;
+        transition: color 0.2s;
+    }
 }
 
 #click-hint {
@@ -88,7 +88,7 @@ a {
     
     li {
         pointer-events: none;
-        transform: translateX(calc(-100% - 72px /* how the hell do you get parent margin and padding in here*/));
+        transform: translateX(calc(-100% - 72px));
 
         a {
             pointer-events: auto;
